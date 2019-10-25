@@ -8,6 +8,10 @@ const port = 5000;
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/prices", priceController.getList);
+app.get("*", (req, res) => {
+  res.status(404);
+  res.send({ success: false, message: "404 | Not found" });
+});
 
 // Listen on port 5000
 app.listen(port, () => {

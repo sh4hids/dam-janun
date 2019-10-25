@@ -1,17 +1,14 @@
+const cloudscraper = require("cloudscraper");
 const $ = require("cheerio");
 const got = require("got");
 const FormData = require("form-data");
 const numberPattern = /(?:\d{1,3}(?:,\d{3})*|\d+)(?:\.\d+)?/g;
 
-const getRokomariPrices = async (
-  browser,
-  { title, author = "", publisher = "" }
-) => {
+const getRokomariPrices = async ({ title, author = "", publisher = "" }) => {
   const prices = [];
-  const page = await browser.newPage();
-  await page.goto(`https://www.rokomari.com/search?term=${title}`);
-  await page.waitFor(5000);
-  const html = await page.content();
+  const html = await cloudscraper.get(
+    encodeURI(`https://www.rokomari.com/search?term=${title}`)
+  );
 
   const containers = $(".book-text-area", html);
 
@@ -38,16 +35,14 @@ const getRokomariPrices = async (
   return prices;
 };
 
-const getWafilifePrices = async (
-  browser,
-  { title, author = "", publisher = "" }
-) => {
+const getWafilifePrices = async ({ title, author = "", publisher = "" }) => {
   const prices = [];
-  const page = await browser.newPage();
-  await page.goto(`https://www.wafilife.com/search/?wpsolr_q=${title}`);
-  const html = await page.content();
 
-  const containers = $(".product-meta-wrapper", html);
+  const html = await got(
+    encodeURI(`https://www.wafilife.com/search/?wpsolr_q=${title}`)
+  );
+
+  const containers = $(".product-meta-wrapper", html.body);
   for (var i = 0; i < containers.length; i++) {
     const bookTitle = $(".heading-title a", containers[i]).text();
     const bookAuthor = $(".wd_product_categories a", containers[i])
@@ -69,10 +64,7 @@ const getWafilifePrices = async (
   return prices;
 };
 
-const getNiyamahshopPrices = async (
-  browser,
-  { title, author = "", publisher = "" }
-) => {
+const getNiyamahshopPrices = async ({ title, author = "", publisher = "" }) => {
   const prices = [];
   let form = new FormData();
   form.append("action", "aws_action");
