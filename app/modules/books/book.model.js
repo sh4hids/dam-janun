@@ -48,9 +48,10 @@ const getWafilifePrices = async ({ title, author = "", publisher = "" }) => {
     const bookAuthor = $(".wd_product_categories a", containers[i])
       .first()
       .text();
-    const price = $(".price ins .woocommerce-Price-amount", containers[i])
-      .text()
-      .match(numberPattern)[0];
+    const price = $(
+      ".price ins .woocommerce-Price-amount",
+      containers[i]
+    ).text();
 
     if (bookTitle.includes(title)) {
       prices.push({
@@ -99,8 +100,37 @@ const getNiyamahshopPrices = async ({ title, author = "", publisher = "" }) => {
   return prices;
 };
 
+const getPriceList = async ({ title, author, publisher }) => {
+  const list = {
+    rokomari: [],
+    wafilife: [],
+    niyamahshop: []
+  };
+
+  const rokomariPriceList = await getRokomariPrices({
+    title,
+    author,
+    publisher
+  });
+  list.rokomari = rokomariPriceList;
+
+  const wafilifePriceList = await getWafilifePrices({
+    title,
+    author,
+    publisher
+  });
+  list.wafilife = wafilifePriceList;
+
+  const niyamahshopPrices = await getNiyamahshopPrices({
+    title,
+    author,
+    publisher
+  });
+  list.niyamahshop = niyamahshopPrices;
+
+  return list;
+};
+
 module.exports = {
-  getRokomariPrices,
-  getWafilifePrices,
-  getNiyamahshopPrices
+  getPriceList
 };

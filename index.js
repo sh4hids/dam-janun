@@ -1,13 +1,19 @@
 const express = require("express");
 const app = express();
-const { priceController } = require("./app/modules/price");
+const { booksController } = require("./app/modules/books");
 
 const port = 5000;
 
 // Body parser
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/prices", priceController.getList);
+app.get("/status", (req, res) => {
+  res.send({
+    success: true,
+    message: "Server up and running!"
+  });
+});
+app.get("/books/price", booksController.getPriceList);
 app.get("*", (req, res) => {
   res.status(404);
   res.send({ success: false, message: "404 | Not found" });
