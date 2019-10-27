@@ -10,7 +10,7 @@ const getRokomariPrices = async ({ title, author = "", publisher = "" }) => {
     encodeURI(`https://www.rokomari.com/search?term=${title}`)
   );
 
-  const containers = $(".book-text-area", html);
+  const containers = $(".book-list-wrapper", html);
 
   for (var i = 0; i < containers.length; i++) {
     const bookTitle = $(".book-title", containers[i]).text();
@@ -18,6 +18,9 @@ const getRokomariPrices = async ({ title, author = "", publisher = "" }) => {
     const price = $(".book-price", containers[i])
       .text()
       .match(numberPattern)[0];
+    const link = `https://www.rokomari.com${$("a", containers[i]).attr(
+      "href"
+    )}`;
 
     if (
       bookTitle.includes(title) &&
@@ -25,6 +28,7 @@ const getRokomariPrices = async ({ title, author = "", publisher = "" }) => {
         (publisher && bookAuthor.includes(publisher)))
     ) {
       prices.push({
+        link,
         price,
         title: bookTitle,
         author: bookAuthor
@@ -45,6 +49,7 @@ const getWafilifePrices = async ({ title, author = "", publisher = "" }) => {
   const containers = $(".product-meta-wrapper", html.body);
   for (var i = 0; i < containers.length; i++) {
     const bookTitle = $(".heading-title a", containers[i]).text();
+    const link = $(".heading-title a", containers[i]).attr("href");
     const bookAuthor = $(".wd_product_categories a", containers[i])
       .first()
       .text();
@@ -55,6 +60,7 @@ const getWafilifePrices = async ({ title, author = "", publisher = "" }) => {
 
     if (bookTitle.includes(title)) {
       prices.push({
+        link,
         price,
         title: bookTitle,
         author: bookAuthor
@@ -88,7 +94,9 @@ const getNiyamahshopPrices = async ({ title, author = "", publisher = "" }) => {
         const price = $("ins .woocommerce-Price-amount", containers[i].price)
           .text()
           .match(numberPattern)[0];
+        const link = containers[i].link;
         prices.push({
+          link,
           price,
           title: bookTitle,
           author: ""
