@@ -5,8 +5,10 @@
   "dependencies": {
     "@rebass/forms": "^4.0.6",
     "axios": "^0.19.0",
+    "bn-number-utils": "^0.2.0",
     "dotenv": "^8.2.0",
     "js-cookie": "^2.2.1",
+    "qs": "^6.9.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",

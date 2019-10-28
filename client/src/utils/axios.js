@@ -1,16 +1,12 @@
 import axios from 'axios';
 
-const fetch = async ({ url, method, body, type, token }) => {
+const fetch = async ({ url, method, body }) => {
   const options = {
     method,
-    headers: requestHeaders(token, type),
-    data:
-      method !== 'GET'
-        ? type !== 'multipart'
-          ? JSON.stringify(body)
-          : body
-        : null,
+    headers: requestHeaders(),
+    data: body,
   };
+
   const res = await axios(url, options);
   return parseStatus(res.status, getJSON(res));
 };
@@ -31,25 +27,17 @@ async function getJSON(response) {
   if (response.status === 204) return '';
 
   try {
-    const text = await response.text(); // Parse it as text
-    const data = JSON.parse(text);
+    const data = await response.data;
     return data;
   } catch (err) {
     return err;
   }
 }
 
-function requestHeaders(token, type) {
-  if (type && type === 'multipart') {
-    return {
-      Authorization: token ? `Token ${token}` : '',
-    };
-  }
-
+function requestHeaders() {
   return {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authorization: token ? `Token ${token}` : '',
   };
 }
 
