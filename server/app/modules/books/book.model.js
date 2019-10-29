@@ -19,7 +19,7 @@ const getRokomariPrices = async ({ title, author = '', publisher = '' }) => {
     const bookAuthor = $('.book-author', containers[i]).text();
     const price = $('.book-price', containers[i])
       .text()
-      .match(numberPattern)[0];
+      .match(numberPattern)[0].replace(/\D/g, "");
     const link = `${shopList.rokomari.website}${$('a', containers[i]).attr(
       'href',
     )}`;
@@ -57,7 +57,7 @@ const getWafilifePrices = async ({ title }) => {
     const price = $(
       '.price ins .woocommerce-Price-amount',
       containers[i],
-    ).text();
+    ).text().replace(/\D/g, "");
 
     if (bookTitle.includes(title)) {
       prices.push({
@@ -92,7 +92,7 @@ const getNiyamahshopPrices = async ({ title }) => {
       if (bookTitle.includes(title)) {
         const price = $('ins .woocommerce-Price-amount', containers[i].price)
           .text()
-          .match(numberPattern)[0];
+          .match(numberPattern)[0].replace(/\D/g, "");
         const { link } = containers[i];
         prices.push({
           link,
