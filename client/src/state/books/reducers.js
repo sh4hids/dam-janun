@@ -10,12 +10,16 @@ const bookReducers = function(state = initialState, { type, payload }) {
       return {
         ...state,
         isFetchingBookPrices: true,
+        fetchBookPricesDone: false,
+        fetchBookPricesFailed: false,
+        prices: [],
       };
     case types.FETCH_BOOK_PRICES_DONE:
       return {
         ...state,
         isFetchingBookPrices: false,
         fetchBookPricesDone: true,
+        fetchBookPricesFailed: false,
         prices: payload,
       };
     case types.FETCH_BOOK_PRICES_FAILED:

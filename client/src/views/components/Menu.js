@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { space, height, width } from "styled-system";
+import styled from 'styled-components';
+import { space, height, width } from 'styled-system';
 
 const Menu = styled.ul`
   margin: 0;
@@ -14,6 +14,12 @@ const Menu = styled.ul`
       text-decoration: none;
       color: ${({ theme }) => theme.colors.light};
       padding: 0 16px;
+    }
+
+    &:last-child {
+      a {
+        padding-right: 0;
+      }
     }
   }
 

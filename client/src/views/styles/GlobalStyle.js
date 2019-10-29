@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -58,6 +58,12 @@ const GlobalStyle = createGlobalStyle`
   * button {
     cursor: pointer;
     outline: none;
+
+    &:disabled {
+      color: ${({ theme }) => theme.colors.lightDark};
+      background-color: ${({ theme }) => theme.colors.light};
+      cursor: not-allowed;
+    }
   }
 `;
 

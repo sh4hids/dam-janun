@@ -17,16 +17,7 @@ const MainLayout = ({ children }) => (
           <Box width={1 / 2}>
             <Menu>
               <li>
-                <a href="/">About</a>
-              </li>
-              <li>
-                <a href="/">GitHub</a>
-              </li>
-              <li>
-                <a href="/">Hello</a>
-              </li>
-              <li>
-                <a href="/">C</a>
+                <a href="https://github.com/sh4hids/dam-janun">GitHub</a>
               </li>
             </Menu>
           </Box>

@@ -25,17 +25,27 @@ const getRokomariPrices = async ({ title, author = '', publisher = '' }) => {
     )}`;
 
     if (
-      bookTitle.includes(title) &&
-      ((author && bookAuthor.includes(author)) ||
-        (publisher && bookAuthor.includes(publisher)))
+      bookTitle.includes(title)
     ) {
-      prices.push({
-        link,
-        price,
-        title: bookTitle,
-        author: bookAuthor,
-        shop: shopList.rokomari.title,
-      });
+      if (author) {
+        if (bookAuthor.includes(author)) {
+          prices.push({
+            link,
+            price,
+            title: bookTitle,
+            author: bookAuthor,
+            shop: shopList.rokomari.title,
+          });
+        }
+      } else {
+        prices.push({
+          link,
+          price,
+          title: bookTitle,
+          author: bookAuthor,
+          shop: shopList.rokomari.title,
+        });
+      }
     }
   }
 
