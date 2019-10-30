@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/dam-janun/static/js/main.f51e9766.chunk.js",
+    "main.js.map": "/dam-janun/static/js/main.f51e9766.chunk.js.map",
+    "runtime-main.js": "/dam-janun/static/js/runtime-main.191d88d6.js",
+    "runtime-main.js.map": "/dam-janun/static/js/runtime-main.191d88d6.js.map",
+    "static/js/2.c1ecfdf7.chunk.js": "/dam-janun/static/js/2.c1ecfdf7.chunk.js",
+    "static/js/2.c1ecfdf7.chunk.js.map": "/dam-janun/static/js/2.c1ecfdf7.chunk.js.map",
+    "index.html": "/dam-janun/index.html",
+    "precache-manifest.e4e83bfeb4f6bc9fb4d76d5813dc067d.js": "/dam-janun/precache-manifest.e4e83bfeb4f6bc9fb4d76d5813dc067d.js",
+    "service-worker.js": "/dam-janun/service-worker.js",
+    "static/media/logo-outlined.svg": "/dam-janun/static/media/logo-outlined.44cd9846.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.191d88d6.js",
+    "static/js/2.c1ecfdf7.chunk.js",
+    "static/js/main.f51e9766.chunk.js"
+  ]
+}
