@@ -31,7 +31,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://apps.shahid.pro/dam-janun",
+  "homepage": "https://apps.shahid.pro/dam-janun",
   "eslintConfig": {
     "extends": "react-app"
   },
