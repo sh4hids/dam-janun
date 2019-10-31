@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => (
       <Box width={1} maxWidth={980} pr={3} pl={3} m="0 auto">
         <Flex flexWrap="wrap">
           <Box width={1 / 2}>
-            <a href="/">
+            <a href={window.location.pathname || '/'}>
               <Image width={40} mt={10} src={logo} alt="দাম জানুন" />
             </a>
           </Box>
