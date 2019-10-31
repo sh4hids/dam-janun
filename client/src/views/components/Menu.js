@@ -1,7 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import { space, height, width } from 'styled-system';
 
-const Menu = styled.ul`
+const MenuContainer = styled.ul`
   margin: 0;
   padding: 0;
   text-align: right;
@@ -27,5 +28,13 @@ const Menu = styled.ul`
   ${height};
   ${width};
 `;
+
+const Menu = () => (
+  <MenuContainer>
+    <li>
+      <a href="https://github.com/sh4hids/dam-janun">গিটহাব</a>
+    </li>
+  </MenuContainer>
+);
 
 export default Menu;

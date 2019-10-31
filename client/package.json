@@ -42,6 +42,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint-plugin-flowtype": "^4.3.0",
     "gh-pages": "^2.1.1",
     "redux-devtools-extension": "^2.13.8"
   }

@@ -11,15 +11,11 @@ const MainLayout = ({ children }) => (
         <Flex flexWrap="wrap">
           <Box width={1 / 2}>
             <a href="/">
-              <Image width={40} mt={10} src={logo} alt="Damjanun" />
+              <Image width={40} mt={10} src={logo} alt="দাম জানুন" />
             </a>
           </Box>
           <Box width={1 / 2}>
-            <Menu>
-              <li>
-                <a href="https://github.com/sh4hids/dam-janun">GitHub</a>
-              </li>
-            </Menu>
+            <Menu />
           </Box>
         </Flex>
       </Box>
