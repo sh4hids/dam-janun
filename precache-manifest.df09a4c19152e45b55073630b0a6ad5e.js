@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1a97197f6364161429d9b095eaf942ab",
+    "revision": "bf93bfb40b06db516f211a331dca1bef",
     "url": "/dam-janun/index.html"
   },
   {
