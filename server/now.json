@@ -1,6 +1,20 @@
 {
   "version": 2,
-  "builds": [{ "src": "index.js", "use": "@now/node-server" }],
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node-server"
+    }
+  ],
+  "env": {
+    "APP_CORS_ORIGIN": "@app_cors_origin"
+  },
+  "build": {
+    "env": {
+      "APP_CORS_ORIGIN": "@app_cors_origin"
+    }
+  },
+
   "routes": [
     {
       "src": "/.*",
