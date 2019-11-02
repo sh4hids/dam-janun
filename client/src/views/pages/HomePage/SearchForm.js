@@ -102,8 +102,8 @@ class SearchFormEnhanced extends Component {
             >
               <Box pr={[2, 3, 3]} pl={[2, 3, 3]} width={1}>
                 <Text color="lightDark">
-                  আপনি '
-                  <InlineCard color="secondary">{searchedTerm}</InlineCard>' এর
+                  আপনি
+                  <InlineCard color="secondary">{searchedTerm}</InlineCard> এর
                   দাম জানতে চেয়েছেন
                 </Text>
               </Box>
