@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8da292960ba2bb7c591b0ede2df35b1e",
+    "revision": "4350e3826afd8bef0a4d5d808b4ea857",
     "url": "/dam-janun/index.html"
   },
   {
-    "revision": "425db074ea69fd0a0b74",
-    "url": "/dam-janun/static/js/2.b616ec0f.chunk.js"
+    "revision": "d17441e37519161880c5",
+    "url": "/dam-janun/static/js/2.96c4fcc7.chunk.js"
   },
   {
-    "revision": "20212199a04c3374502e",
-    "url": "/dam-janun/static/js/main.3a64d233.chunk.js"
+    "revision": "31a671ae480b1e1f135a",
+    "url": "/dam-janun/static/js/main.b8c46638.chunk.js"
   },
   {
     "revision": "16cf3e693f25e036f5b3",
