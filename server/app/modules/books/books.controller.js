@@ -2,12 +2,10 @@ const Book = require('./book.model');
 
 const getPriceList = async (req, res) => {
   try {
-    const { title, author = '', publisher = '' } = req.query;
+    const { title } = req.query;
 
     const prices = await Book.getPriceList({
       title,
-      author,
-      publisher,
     });
 
     res.send({
@@ -18,7 +16,7 @@ const getPriceList = async (req, res) => {
     res.status(500);
     res.send({
       success: false,
-      message: 'Something went wrong',
+      message: 'Something went wrong!',
     });
   }
 };

@@ -6,7 +6,7 @@ const { shopList } = require('../../config');
 
 const numberPattern = /(?:\d{1,3}(?:,\d{3})*|\d+)(?:\.\d+)?/g;
 
-const getRokomariPrices = async ({ title, author = '', publisher = '' }) => {
+const getRokomariPrices = async ({ title }) => {
   const prices = [];
   const html = await cloudscraper.get(
     encodeURI(`${shopList.rokomari.searchURL}${title}`),
@@ -19,33 +19,20 @@ const getRokomariPrices = async ({ title, author = '', publisher = '' }) => {
     const bookAuthor = $('.book-author', containers[i]).text();
     const price = $('.book-price', containers[i])
       .text()
-      .match(numberPattern)[0].replace(/\D/g, "");
+      .match(numberPattern)[0]
+      .replace(/\D/g, '');
     const link = `${shopList.rokomari.website}${$('a', containers[i]).attr(
       'href',
     )}`;
 
-    if (
-      bookTitle.includes(title)
-    ) {
-      if (author) {
-        if (bookAuthor.includes(author)) {
-          prices.push({
-            link,
-            price,
-            title: bookTitle,
-            author: bookAuthor,
-            shop: shopList.rokomari.title,
-          });
-        }
-      } else {
-        prices.push({
-          link,
-          price,
-          title: bookTitle,
-          author: bookAuthor,
-          shop: shopList.rokomari.title,
-        });
-      }
+    if (bookTitle.includes(title) || bookAuthor.includes(title)) {
+      prices.push({
+        link,
+        price,
+        title: bookTitle,
+        author: bookAuthor,
+        shop: shopList.rokomari.title,
+      });
     }
   }
 
@@ -64,12 +51,11 @@ const getWafilifePrices = async ({ title }) => {
     const bookAuthor = $('.wd_product_categories a', containers[i])
       .first()
       .text();
-    const price = $(
-      '.price ins .woocommerce-Price-amount',
-      containers[i],
-    ).text().replace(/\D/g, "");
+    const price = $('.price ins .woocommerce-Price-amount', containers[i])
+      .text()
+      .replace(/\D/g, '');
 
-    if (bookTitle.includes(title)) {
+    if (bookTitle.includes(title) || bookAuthor.includes(title)) {
       prices.push({
         link,
         price,
@@ -99,48 +85,78 @@ const getNiyamahshopPrices = async ({ title }) => {
   if (containers.length) {
     for (let i = 0; i < containers.length; i += 1) {
       const bookTitle = containers[i].title;
-      if (bookTitle.includes(title)) {
-        const price = $('ins .woocommerce-Price-amount', containers[i].price)
-          .text()
-          .match(numberPattern)[0].replace(/\D/g, "");
-        const { link } = containers[i];
-        prices.push({
-          link,
-          price,
-          title: bookTitle,
-          author: '',
-          shop: shopList.niyamahshop.title,
-        });
-      }
+      const price = containers[i].f_price || '0';
+      const { link } = containers[i];
+      prices.push({
+        link,
+        price,
+        title: bookTitle,
+        author: '',
+        shop: shopList.niyamahshop.title,
+      });
     }
   }
 
   return prices;
 };
 
-const getPriceList = async ({ title, author, publisher }) => {
+const getBoibazarPrices = async ({ title }) => {
+  const prices = [];
+  const { body } = await got.get(
+    encodeURI(`${shopList.boibazar.searchURL}${title}`),
+  );
+
+  const containers = $('.search-border', body);
+
+  for (let i = 0; i < containers.length; i += 1) {
+    const bookTitle = $('h1 a', containers[i])
+      .text()
+      .split('\n')[0];
+    const link = $('.col-md-12 h1 a', containers[i]).attr('href');
+    const bookAuthor = $('h3.authorSize a', containers[i])
+      .text()
+      .split('\n')[0];
+    const price = $('h4 span.price-font', containers[i])
+      .text()
+      .split('\n')[0]
+      .split(' ')[1];
+
+    if (bookTitle.includes(title) || bookAuthor.includes(title)) {
+      prices.push({
+        link,
+        price,
+        title: bookTitle,
+        author: bookAuthor,
+        shop: shopList.boibazar.title,
+      });
+    }
+  }
+
+  return prices;
+};
+
+const getPriceList = async ({ title }) => {
   let list = [];
 
   const rokomariPriceList = await getRokomariPrices({
     title,
-    author,
-    publisher,
   });
   list = [...list, ...rokomariPriceList];
 
   const wafilifePriceList = await getWafilifePrices({
     title,
-    author,
-    publisher,
   });
   list = [...list, ...wafilifePriceList];
 
   const niyamahshopPrices = await getNiyamahshopPrices({
     title,
-    author,
-    publisher,
   });
   list = [...list, ...niyamahshopPrices];
+
+  const boibazarPrices = await getBoibazarPrices({
+    title,
+  });
+  list = [...list, ...boibazarPrices];
 
   return list;
 };
