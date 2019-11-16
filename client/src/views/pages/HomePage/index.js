@@ -55,7 +55,7 @@ const HomePage = ({
         <Box width={1} p={[0, 2, 3]}>
           <Card borderRadius={4}>
             <Text textAlign="center" p={3} color="lightDark">
-              বিঃ দ্রঃ এই প্রজেক্টের সকল কোড উন্মুক্ত এবং কোনো প্রকার তথ্য
+              বিঃ দ্রঃ এই প্রজেক্টের সকল কোড উন্মুক্ত এবং সার্চের কোনো তথ্য
               সংগ্রহ বা সংরক্ষণ করা হয় না।
             </Text>
           </Card>
