@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/dam-janun/static/js/main.8880eb8b.chunk.js",
-    "main.js.map": "/dam-janun/static/js/main.8880eb8b.chunk.js.map",
+    "main.js": "/dam-janun/static/js/main.3906c8e3.chunk.js",
+    "main.js.map": "/dam-janun/static/js/main.3906c8e3.chunk.js.map",
     "runtime-main.js": "/dam-janun/static/js/runtime-main.d3044876.js",
     "runtime-main.js.map": "/dam-janun/static/js/runtime-main.d3044876.js.map",
-    "static/js/2.3576615a.chunk.js": "/dam-janun/static/js/2.3576615a.chunk.js",
-    "static/js/2.3576615a.chunk.js.map": "/dam-janun/static/js/2.3576615a.chunk.js.map",
+    "static/js/2.6a7085f2.chunk.js": "/dam-janun/static/js/2.6a7085f2.chunk.js",
+    "static/js/2.6a7085f2.chunk.js.map": "/dam-janun/static/js/2.6a7085f2.chunk.js.map",
     "index.html": "/dam-janun/index.html",
-    "static/js/2.3576615a.chunk.js.LICENSE.txt": "/dam-janun/static/js/2.3576615a.chunk.js.LICENSE.txt",
+    "static/js/2.6a7085f2.chunk.js.LICENSE.txt": "/dam-janun/static/js/2.6a7085f2.chunk.js.LICENSE.txt",
     "static/media/logo-outlined.f9de233e.svg": "/dam-janun/static/media/logo-outlined.f9de233e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d3044876.js",
-    "static/js/2.3576615a.chunk.js",
-    "static/js/main.8880eb8b.chunk.js"
+    "static/js/2.6a7085f2.chunk.js",
+    "static/js/main.3906c8e3.chunk.js"
   ]
 }
