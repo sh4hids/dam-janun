@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.js": "/dam-janun/static/js/main.8753b2d5.chunk.js",
-    "main.js.map": "/dam-janun/static/js/main.8753b2d5.chunk.js.map",
-    "runtime-main.js": "/dam-janun/static/js/runtime-main.191d88d6.js",
-    "runtime-main.js.map": "/dam-janun/static/js/runtime-main.191d88d6.js.map",
-    "static/js/2.b616ec0f.chunk.js": "/dam-janun/static/js/2.b616ec0f.chunk.js",
-    "static/js/2.b616ec0f.chunk.js.map": "/dam-janun/static/js/2.b616ec0f.chunk.js.map",
+    "main.js": "/dam-janun/static/js/main.8880eb8b.chunk.js",
+    "main.js.map": "/dam-janun/static/js/main.8880eb8b.chunk.js.map",
+    "runtime-main.js": "/dam-janun/static/js/runtime-main.d3044876.js",
+    "runtime-main.js.map": "/dam-janun/static/js/runtime-main.d3044876.js.map",
+    "static/js/2.3576615a.chunk.js": "/dam-janun/static/js/2.3576615a.chunk.js",
+    "static/js/2.3576615a.chunk.js.map": "/dam-janun/static/js/2.3576615a.chunk.js.map",
     "index.html": "/dam-janun/index.html",
-    "precache-manifest.e661aed90c739f3306f6e9cbfe7f42a9.js": "/dam-janun/precache-manifest.e661aed90c739f3306f6e9cbfe7f42a9.js",
-    "service-worker.js": "/dam-janun/service-worker.js",
-    "static/media/logo-outlined.svg": "/dam-janun/static/media/logo-outlined.44cd9846.svg"
+    "static/js/2.3576615a.chunk.js.LICENSE.txt": "/dam-janun/static/js/2.3576615a.chunk.js.LICENSE.txt",
+    "static/media/logo-outlined.f9de233e.svg": "/dam-janun/static/media/logo-outlined.f9de233e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.191d88d6.js",
-    "static/js/2.b616ec0f.chunk.js",
-    "static/js/main.8753b2d5.chunk.js"
+    "static/js/runtime-main.d3044876.js",
+    "static/js/2.3576615a.chunk.js",
+    "static/js/main.8880eb8b.chunk.js"
   ]
 }
