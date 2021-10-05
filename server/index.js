@@ -16,6 +16,12 @@ app.get('/status', (req, res) => {
   });
 });
 app.get('/books/price', booksController.getPriceList);
+app.get('/ping', (req, res) => {
+  res.status(200);
+  res.send({
+    data: 'pong',
+  });
+});
 app.get('*', (req, res) => {
   res.status(404);
   res.send({ success: false, message: '404 | Not found' });

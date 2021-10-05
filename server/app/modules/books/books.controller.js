@@ -4,14 +4,23 @@ const getPriceList = async (req, res) => {
   try {
     const { title } = req.query;
 
-    const prices = await Book.getPriceList({
-      title,
-    });
+    if (title) {
+      const prices = await Book.getPriceList({
+        title,
+      });
 
-    res.send({
-      success: true,
-      data: prices,
-    });
+      res.status(200);
+      res.send({
+        success: true,
+        data: prices,
+      });
+    } else {
+      res.status(400);
+      res.send({
+        success: false,
+        message: 'Invalid title',
+      });
+    }
   } catch (e) {
     console.log(e);
     res.status(500);

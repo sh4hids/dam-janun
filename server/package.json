@@ -1,10 +1,10 @@
 {
   "name": "dam-janun",
   "version": "1.0.0",
-  "description": "",
+  "description": "API server for dam janun app",
   "main": "index.js",
   "engines": {
-    "node": "10.x"
+    "node": "14.x"
   },
   "scripts": {
     "start": "node index.js",
@@ -18,22 +18,25 @@
   "author": "Shahidul Islam Majumder <hello@shahid.pro>",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.5",
+    "cheerio": "^1.0.0-rc.10",
+    "chrome-aws-lambda": "^10.1.0",
     "cloudscraper": "^4.6.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "form-data": "^3.0.0",
-    "got": "^11.8.1",
+    "form-data": "^4.0.0",
+    "got": "^11.8.2",
+    "puppeteer-core": "^10.4.0",
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "eslint": "^7.16.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^3.3.0",
-    "nodemon": "^2.0.6",
-    "prettier": "^2.2.1"
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
+    "puppeteer": "^10.4.0"
   }
 }
