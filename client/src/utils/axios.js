@@ -14,9 +14,9 @@ const fetch = async ({ url, method, body }) => {
 function parseStatus(status, res) {
   return new Promise((resolve, reject) => {
     if (status >= 200 && status < 300) {
-      res.then(response => resolve(response));
+      res.then((response) => resolve(response));
     } else {
-      res.then(response => {
+      res.then((response) => {
         return reject({ status, message: response });
       });
     }
@@ -38,6 +38,7 @@ function requestHeaders() {
   return {
     Accept: 'application/json',
     'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
   };
 }
 
