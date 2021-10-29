@@ -1,13 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const { port, appCorsOrigin } = require('./app/config');
+const { port } = require('./app/config');
 
 const app = express();
 const { booksController } = require('./app/modules/books');
 
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ origin: appCorsOrigin }));
+app.use(cors({ origin: '*' }));
 
 app.get('/status', (req, res) => {
   res.send({
