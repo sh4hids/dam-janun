@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/dam-janun/static/js/main.26b733b3.chunk.js",
-    "main.js.map": "/dam-janun/static/js/main.26b733b3.chunk.js.map",
+    "main.js": "/dam-janun/static/js/main.f184eee6.chunk.js",
+    "main.js.map": "/dam-janun/static/js/main.f184eee6.chunk.js.map",
     "runtime-main.js": "/dam-janun/static/js/runtime-main.d3044876.js",
     "runtime-main.js.map": "/dam-janun/static/js/runtime-main.d3044876.js.map",
     "static/js/2.ed3b699b.chunk.js": "/dam-janun/static/js/2.ed3b699b.chunk.js",
@@ -13,6 +13,6 @@
   "entrypoints": [
     "static/js/runtime-main.d3044876.js",
     "static/js/2.ed3b699b.chunk.js",
-    "static/js/main.26b733b3.chunk.js"
+    "static/js/main.f184eee6.chunk.js"
   ]
 }
