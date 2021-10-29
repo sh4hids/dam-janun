@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { color, space, textAlign } from "styled-system";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { color, space, textAlign, layout } from 'styled-system';
 
 const H1 = styled.h1`
   color: ${({ theme }) => theme.colors.dark};
@@ -11,6 +11,7 @@ const H1 = styled.h1`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 const H2 = styled.h2`
   color: ${({ theme }) => theme.colors.dark};
@@ -20,6 +21,7 @@ const H2 = styled.h2`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 const H3 = styled.h3`
   color: ${({ theme }) => theme.colors.dark};
@@ -29,6 +31,7 @@ const H3 = styled.h3`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 const H4 = styled.h4`
   color: ${({ theme }) => theme.colors.dark};
@@ -38,6 +41,7 @@ const H4 = styled.h4`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 const H5 = styled.h5`
   color: ${({ theme }) => theme.colors.dark};
@@ -47,6 +51,7 @@ const H5 = styled.h5`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 
 const H6 = styled.h6`
@@ -57,6 +62,7 @@ const H6 = styled.h6`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 
 const P = styled.p`
@@ -67,6 +73,7 @@ const P = styled.p`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 
 const Caption = styled.p`
@@ -77,6 +84,7 @@ const Caption = styled.p`
   ${color};
   ${space};
   ${textAlign};
+  ${layout};
 `;
 
 const RawHTML = styled.div`
@@ -116,49 +124,49 @@ const RawHTML = styled.div`
 
 const Text = ({ variant, theme, children, html, ...props }) => {
   switch (variant) {
-    case "h1":
+    case 'h1':
       return (
         <H1 theme={theme} {...props}>
           {children}
         </H1>
       );
-    case "h2":
+    case 'h2':
       return (
         <H2 theme={theme} {...props}>
           {children}
         </H2>
       );
-    case "h3":
+    case 'h3':
       return (
         <H3 theme={theme} {...props}>
           {children}
         </H3>
       );
-    case "h4":
+    case 'h4':
       return (
         <H4 theme={theme} {...props}>
           {children}
         </H4>
       );
-    case "h5":
+    case 'h5':
       return (
         <H5 theme={theme} {...props}>
           {children}
         </H5>
       );
-    case "h6":
+    case 'h6':
       return (
         <H6 theme={theme} {...props}>
           {children}
         </H6>
       );
-    case "caption":
+    case 'caption':
       return (
         <Caption theme={theme} {...props}>
           {children}
         </Caption>
       );
-    case "raw":
+    case 'raw':
       return (
         <RawHTML
           theme={theme}
@@ -177,7 +185,7 @@ const Text = ({ variant, theme, children, html, ...props }) => {
 
 Text.propTypes = {
   color: PropTypes.string,
-  variant: PropTypes.string
+  variant: PropTypes.string,
 };
 
 export default Text;

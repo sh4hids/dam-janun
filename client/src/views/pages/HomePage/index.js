@@ -3,7 +3,7 @@ import { Flex, Box } from 'rebass/styled-components';
 import { connect } from 'react-redux';
 
 import { MainLayout } from '../../layouts';
-import { Card, Text, Loader } from '../../components';
+import { Card, Text, Spinner } from '../../components';
 import BookPriceCard from './BookPriceCard';
 import SearchForm from './SearchForm';
 
@@ -30,19 +30,28 @@ const HomePage = ({
           <Box width={1} p={[0, 2, 3]}>
             <Card boxShadow="medium" bg="lighter" borderRadius={4}>
               {isFetchingBookPrices && !fetchBookPricesDone && (
-                <Text textAlign="center" p={3}>
+                <Box
+                  textAlign="center"
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    flexDirection: 'row',
+                    padding: '16px 0 8px 0',
+                  }}
+                >
                   <>
-                    <Loader
-                      width={36}
-                      borderLeftColor="primary"
-                      position="relative"
-                      top={-12}
-                      mr={2}
-                    />{' '}
-                    বই খোঁজা হচ্ছে...
+                    <Spinner color="#5343B5" />
+                    <Text
+                      display="inline-block"
+                      style={{ position: 'relative', top: '-2px' }}
+                    >
+                      বই খোঁজা হচ্ছে...
+                    </Text>
                   </>
-                </Text>
+                </Box>
               )}
+
               {(fetchBookPricesDone || fetchBookPricesFailed) &&
                 !isFetchingBookPrices && (
                   <Text textAlign="center" p={3}>
